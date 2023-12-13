@@ -1,10 +1,10 @@
 plugins {
-    id "com.android.library"
-    id "org.jetbrains.kotlin.android"
-    id "maven-publish"
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
 
-//group = "com.github.reyst"
+//group = "com.github.Reyst"
 
 android {
     namespace = "com.github.reyst.utils.view"
@@ -32,6 +32,15 @@ android {
 
     buildFeatures {
         viewBinding = true
+    }
+
+    publishing {
+        publishing {
+            singleVariant("release") {
+                withSourcesJar()
+//            withJavadocJar()
+            }
+        }
     }
 }
 
