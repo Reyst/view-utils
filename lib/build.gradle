@@ -4,7 +4,7 @@ plugins {
     id "maven-publish"
 }
 
-group = "com.github.reyst"
+//group = "com.github.reyst"
 
 android {
     namespace = "com.github.reyst.utils.view"
@@ -35,10 +35,14 @@ android {
     }
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.Reyst'
+            artifactId = 'view-utils'
+            version = '1.0.1'
+
+            afterEvaluate {
                 from components.release
             }
         }
@@ -46,7 +50,7 @@ afterEvaluate {
 }
 
 dependencies {
-    api "androidx.core:core-ktx:1.12.0"
-    api "androidx.appcompat:appcompat:1.6.1"
-    api "com.google.android.material:material:1.10.0"
+//    api "androidx.core:core-ktx:1.12.0"
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+//    api "com.google.android.material:material:1.10.0"
 }
