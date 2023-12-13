@@ -1,1 +1,1 @@
-![Release](https://jitpack.io/v/Reyst/ViewUtils.svg)
+![Release](https://jitpack.io/v/Reyst/view-utils.svg)
