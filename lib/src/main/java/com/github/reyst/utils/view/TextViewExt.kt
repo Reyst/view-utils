@@ -24,8 +24,9 @@ fun TextView.setDrawableStart(drawable: Drawable?) {
     )
 }
 
-fun TextView.setDrawableStart(@DrawableRes drawable: Int?) {
+fun TextView.setDrawableStart(@DrawableRes drawable: Int) {
     drawable
+        .takeIf { it != 0 }
         ?.let { ContextCompat.getDrawable(context, it) }
         .also(::setDrawableStart)
 }
@@ -40,8 +41,9 @@ fun TextView.setDrawableEnd(drawable: Drawable?) {
     )
 }
 
-fun TextView.setDrawableEnd(@DrawableRes drawable: Int?) {
+fun TextView.setDrawableEnd(@DrawableRes drawable: Int) {
     drawable
+        .takeIf { it != 0 }
         ?.let { ContextCompat.getDrawable(context, it) }
         .also(::setDrawableEnd)
 }
